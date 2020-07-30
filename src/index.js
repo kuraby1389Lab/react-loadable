@@ -163,6 +163,7 @@ function createLoadableComponent(loadFn, options) {
     }
 
     componentDidMount() {
+      this._loadModule();
       this._mounted = true;
     }
 
@@ -222,10 +223,10 @@ function createLoadableComponent(loadFn, options) {
         });
     }
 
-    componentWillUnmount() {
+   /* componentWillUnmount() {
       this._mounted = false;
       this._clearTimeouts();
-    }
+    }*/
 
     _clearTimeouts() {
       clearTimeout(this._delay);
